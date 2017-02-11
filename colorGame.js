@@ -70,7 +70,7 @@ function reset(){
     }
   }
   h1.style.background = "steelblue";
-  resetButton.textContent = "新游戏";
+  resetButton.textContent = "New Game";
   message.textContent = "";
 }
 
@@ -81,7 +81,7 @@ function setupLevelBtn(){
       levelBtn[0].classList.remove("selected");
       levelBtn[1].classList.remove("selected");
       this.classList.add("selected");
-      this.textContent === "简单" ? numSquares = 3: numSquares = 6;
+      this.textContent === "Easy" ? numSquares = 3: numSquares = 6;
       reset();
     });
   }
@@ -95,12 +95,12 @@ function setupSquares(){
       var clickedColor = this.style.background;
       //compare color to pickedColor
       if (clickedColor === pickedColor){
-        displayMessage.textContent = "胜利!";
-        resetButton.textContent = "再来一次？";
+        displayMessage.textContent = "You win!";
+        resetButton.textContent = "Try again？";
         changeColors(clickedColor);
         h1.style.background = clickedColor;
       } else {
-        displayMessage.textContent = "请再试一次";
+        displayMessage.textContent = "Please try again";
         this.style.background = "#232323";
       }
     });
